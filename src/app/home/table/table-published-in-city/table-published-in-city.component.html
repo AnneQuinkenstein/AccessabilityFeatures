@@ -1,0 +1,31 @@
+<div class="mat-elevation-z8">
+
+
+
+  <table mat-table class="full-width-table" [dataSource]="publicationsInBerlin" aria-label="Elements" >>
+
+    <!-- SR# Column -->
+    <ng-container matColumnDef="SR#">
+      <th mat-header-cell *matHeaderCellDef>SR#</th>
+      <td mat-cell *matCellDef="let publication; let i = index;">{{i +1}}</td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="PPN">
+      <th mat-header-cell *matHeaderCellDef>PPN</th>
+      <td mat-cell *matCellDef="let publication">{{publication.ppnNo}}</td>
+    </ng-container>
+
+    <!-- role Column -->
+    <ng-container matColumnDef="Author">
+      <th mat-header-cell *matHeaderCellDef>Author</th>
+      <td mat-cell *matCellDef="let publication">{{changeAuthorlist(publication.authorList)}}</td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let publication; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

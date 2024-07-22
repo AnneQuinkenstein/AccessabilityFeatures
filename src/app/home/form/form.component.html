@@ -1,0 +1,63 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Erstelle eine neue Publikation</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+
+          <mat-form-field class="full-width">
+            <mat-label>ppnNo</mat-label>
+            <input id="ppnNo" matInput placeholder="ppnNo" formControlName="ppnNo">
+            @if (addressForm.controls['ppnNo'].hasError('required')) {
+              <mat-error>ppnNo is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Titel" formControlName="title">
+              @if (addressForm.controls['title'].hasError('required')) {
+                <mat-error>Title is <strong>required</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Autor:innen" formControlName="author">
+            @if (addressForm.controls['author'].hasError('required')) {
+              <mat-error>Author is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+          </div>
+      <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput #yearofPublication maxlength="4" placeholder="Publikationsjahr" type="number" formControlName="yearofPublication">
+          @if (addressForm.controls['yearofPublication'].hasError('required')) {
+            <mat-error>Year of Publication is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Publikationsort" formControlName="place">
+            @if (addressForm.controls['place'].hasError('required')) {
+              <mat-error>Place is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Einreichen</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
