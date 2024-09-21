@@ -1,18 +1,39 @@
 ## Accessability
+npm install eslint-plugin-jsx-a11y @angular-eslint/eslint-plugin --save-dev
+um die Barrierefreiheit zu verbessern, wurde das Plugin eslint-plugin-jsx-a11y installiert. und eslint angeschaltet
 
 # Sprache 
 von englisch auf deutsch
-![Bild vom Code im Head ](image/language2024-07-19.png)
+![HTML Code zeigt Language in Head ](image/language2024-07-19.png)
 
-# Lables
+# Semantik HTML
+## Lables
 zu den Textfeld in dem Formular, wurden Lables hinzugefügt
 <mat-label>ppnNo</mat-label> -> Material Klasse die id und for verknüpft
-![Code für Labels](image/label.png)
-semnatik
+![HTML Code für Labels](image/label.png)
+MatFormField verbindet die Label automatisch mit dem Steuerelement des Feldes über ein natives <label>-Element und verwendet das for-Attribut, um auf die ID des Steuerelements zu verweisen.
+Beim Informationstext über <mat-error> fügt MatFormField die IDs dieser Elemente automatisch dem aria-describedby-Attribut des Steuerelements hinzu. Zusätzlich setzt MatError standardmäßig aria-live="polite", sodass unterstützende Technologien Fehler ankündigen, wenn sie auftreten.
+
+## Navigation
+Die Elemente <mat-sidenav> und <mat-sidenav-content> werden jeweils mit einem passenden role-Attribut versehen. Das <mat-sidenav> eher ein Inhaltsverzeichnis ist, wird es mit role="directory" versehen. Das <mat-sidenav-content> wird mit role="main" versehen, da es den Hauptinhalt der Seite darstellt.
+ ### Fokus
+Das Sidenav hat die Fähigkeit, den Fokus zu erfassen. Dieses Verhalten ist für die Modi "push" und "over" aktiviert und für den Modus "side" deaktiviert. Sie können das Standardverhalten über das autoFocus-Input ändern.
+Standardmäßig wird das erste fokussierbare Element beim Öffnen den Fokus erhalten. Wenn ein anderes Element fokussiert werden soll, können Sie das cdkFocusInitial-Attribut auf dieses setzen.
+
+## Table 
+![HTML Code zeigt Role in Table-Tag](image/tableRole.png)
+Standardmäßig verwendet MatTable role="table"` für Tabellen, das könnte ich ändern, passt aber hier.
+Material CDK (Component Dev Kit) bietet Unterstützung für Barrierefreiheit bei Tabellen. MatTable basiert auf der CDK-Datentabelle
+
+# Tastaturbedienung
 Skiplink
-Sprache 
+ 
 Fokusstate Button (Outline)
 https://stackoverflow.com/questions/67364304/how-do-i-add-outline-on-focus-to-material-button 
 
 
 php webtech bachlor (max baier), learn with gio (php beginner 2023), LaraCasts php basic tutorial (Larawell framework)
+
+verwendete Quellen:
+https://blog.angular.dev/improving-angular-components-accessibility-89b8ae904952
+https://v5.material.angular.io
