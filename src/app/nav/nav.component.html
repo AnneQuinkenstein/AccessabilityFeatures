@@ -11,14 +11,17 @@
       <a mat-list-item [routerLink]="'pubYear'">Publikationen im Jahr</a>
     </mat-nav-list>-->
 
-    <mat-nav-list>
-      <a mat-list-item aria-current="page" [routerLink]="'form'" (keydown)="onKeydown($event)" #navItem>
+    <mat-nav-list role="navigation">
+      <a mat-list-item  [routerLink]="''" (keydown)="onKeydown($event)" navItem>
+        Menu
+      </a>
+      <a mat-list-item  [routerLink]="'form'" (keydown)="onKeydown($event)" navItem>
         Publikation erstellen
       </a>
-      <a mat-list-item [routerLink]="'pubBl'" (keydown)="onKeydown($event)" #navItem>
+      <a mat-list-item  [routerLink]="'pubBl'" (keydown)="onKeydown($event)" navItem>
         Autor:innen aus Berlin
       </a>
-      <a mat-list-item [routerLink]="'pubYear'" (keydown)="onKeydown($event)" #navItem>
+      <a mat-list-item  [routerLink]="'pubYear'" (keydown)="onKeydown($event)" navItem>
         Publikationen im Jahr
       </a>
     </mat-nav-list>

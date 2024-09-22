@@ -37,23 +37,27 @@ https://html.spec.whatwg.org/multipage/tables.html#the-caption-element
 
 
 # Tastaturbedienung
+#nav - ListKeyManager
+
+@ViewChildren(MatListItem) is used to get a list of MatListItem elements.
+ListKeyManager is initialized in the ngAfterViewInit lifecycle hook to manage the list of items.
+ActiveDescendantKeyManager
+
+
+aria-current="page" -> Reihe verwandter Elemente, die den aktuellen Abschnitt einer Website darstellen.
+
+form: aria-labelledby="formTitle" beim error die id="formTitle" hinzufügen
+
+
 Skiplink
  
 Fokusstate Button (Outline)
 https://stackoverflow.com/questions/67364304/how-do-i-add-outline-on-focus-to-material-button 
 
 
-php webtech bachlor (max baier), learn with gio (php beginner 2023), LaraCasts php basic tutorial (Larawell framework)
-
 verwendete Quellen:
 https://blog.angular.dev/improving-angular-components-accessibility-89b8ae904952
 https://v5.material.angular.io
 
 
-#nav - ListKeyManager
 
-@ViewChildren(MatListItem) is used to get a list of MatListItem elements.
-ListKeyManager is initialized in the ngAfterViewInit lifecycle hook to manage the list of items.
-aria-current="page" -> Reihe verwandter Elemente, die den aktuellen Abschnitt einer Website darstellen.
-
-form: aria-labelledby="formTitle" beim error die id="formTitle" hinzufügen

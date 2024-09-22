@@ -33,6 +33,7 @@ import { NavItemDirective } from '../nav-item-directive/nav-item-directive.compo
 })
 export class NavComponent implements AfterViewInit {
   private breakpointObserver = inject(BreakpointObserver);
+  private router = inject(Router);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -44,22 +45,33 @@ export class NavComponent implements AfterViewInit {
   keyManager!: ListKeyManager<NavItemDirective>;
 
   items = [
+    { label: 'Menu', route: '/' },
     { label: 'Publikation erstellen', route: '/form' },
     { label: 'Autor:innen aus Berlin', route: '/pubBl' },
     { label: 'Publikationen im Jahr', route: '/pubYear' }
   ];
 
-  constructor(private router: Router) {}
 
   ngAfterViewInit() {
-    this.keyManager = new ListKeyManager(this.navItems).withWrap();
+    console.log('navItems:', this.navItems);
+    this.keyManager = new ListKeyManager(this.navItems).withWrap().withVerticalOrientation();
+    this.keyManager.setFirstItemActive();
+    console.log('keyManager:', this.keyManager);
   }
 
   onKeydown(event: KeyboardEvent) {
     this.keyManager.onKeydown(event);
+    console.log('Key pressed:', event.key);
+    console.log('Active item index:', this.keyManager.activeItemIndex);
+    console.log('Active item:', this.keyManager.activeItem?.getLabel());
     if (event.key === 'Enter' && this.keyManager.activeItem) {
+      console.log('Enter pressed');
+      console.log('Active item:', this.keyManager.activeItemIndex);
       const activeIndex = this.keyManager.activeItemIndex!;
-      this.router.navigate([this.items[activeIndex].route]);
+      console.log('Active item route', this.items[activeIndex].route);
+      this.router.navigateByUrl(this.items[activeIndex].route);
+      console.log('Ende');
     }
   }
+
 }
