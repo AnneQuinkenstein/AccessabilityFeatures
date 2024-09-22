@@ -13,6 +13,8 @@ zu den Textfeld in dem Formular, wurden Lables hinzugefügt
 ![HTML Code für Labels](image/label.png)
 MatFormField verbindet die Label automatisch mit dem Steuerelement des Feldes über ein natives <label>-Element und verwendet das for-Attribut, um auf die ID des Steuerelements zu verweisen.
 Beim Informationstext über <mat-error> fügt MatFormField die IDs dieser Elemente automatisch dem aria-describedby-Attribut des Steuerelements hinzu. Zusätzlich setzt MatError standardmäßig aria-live="polite", sodass unterstützende Technologien Fehler ankündigen, wenn sie auftreten.
+##Input
+type="text" 
 
 ## Navigation
 Die Elemente <mat-sidenav> und <mat-sidenav-content> werden jeweils mit einem passenden role-Attribut versehen. Das <mat-sidenav> eher ein Inhaltsverzeichnis ist, wird es mit role="directory" versehen. Das <mat-sidenav-content> wird mit role="main" versehen, da es den Hauptinhalt der Seite darstellt.
@@ -24,6 +26,15 @@ Standardmäßig wird das erste fokussierbare Element beim Öffnen den Fokus erha
 ![HTML Code zeigt Role in Table-Tag](image/tableRole.png)
 Standardmäßig verwendet MatTable role="table"` für Tabellen, das könnte ich ändern, passt aber hier.
 Material CDK (Component Dev Kit) bietet Unterstützung für Barrierefreiheit bei Tabellen. MatTable basiert auf der CDK-Datentabelle
+Überschrift zu den Tabellen hinzufügen mit [Caption](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced#adding_a_caption_to_your_table_with_caption)
+<thead> element must wrap the part of the table that is the header — this is usually the first row containing the column headings, but this is not necessarily always the case. If you are using <col>/<colgroup> elements, the table header should come just below those.
+The <tbody> element needs to wrap the main part of the table content that isn't the table header or footer
+name + role="columnheader" für die Tabellenüberschriften
+role="row" für die Tabellenzeilen
+role="cell" für die Tabellenzellen
+caption hinzugefügt für die Tabelle
+https://html.spec.whatwg.org/multipage/tables.html#the-caption-element
+
 
 # Tastaturbedienung
 Skiplink

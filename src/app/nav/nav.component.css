@@ -15,3 +15,18 @@
   top: 0;
   z-index: 1;
 }
+
+.logo-image {
+  max-width: 7%;
+  margin: auto 5%;
+}
+
+.titelbar{
+  display: flex;
+}
+
+caption {
+  font-size: 30px;
+  line-height: 36px;
+  color: #007ab0;
+}

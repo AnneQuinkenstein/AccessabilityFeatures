@@ -71,7 +71,7 @@ export class TablePubPerYearComponent implements OnInit{
     }
 
     return result;
-  };
+  }
 
 
 }

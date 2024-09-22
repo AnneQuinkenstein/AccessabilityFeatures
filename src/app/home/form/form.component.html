@@ -9,7 +9,7 @@
 
           <mat-form-field class="full-width">
             <mat-label>ppnNo</mat-label>
-            <input id="ppnNo" matInput placeholder="ppnNo" formControlName="ppnNo">
+            <input type="text" id="ppnNo" matInput placeholder="ppnNo" formControlName="ppnNo">
             @if (addressForm.controls['ppnNo'].hasError('required')) {
               <mat-error>ppnNo is <strong>required</strong></mat-error>
             }
@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Titel" formControlName="title">
+              <input type="text" matInput placeholder="Titel" formControlName="title">
               @if (addressForm.controls['title'].hasError('required')) {
                 <mat-error>Title is <strong>required</strong></mat-error>
               }
@@ -29,7 +29,7 @@
         <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Autor:innen" formControlName="author">
+            <input type="text" matInput placeholder="Autor:innen" formControlName="author">
             @if (addressForm.controls['author'].hasError('required')) {
               <mat-error>Author is <strong>required</strong></mat-error>
             }
@@ -47,7 +47,7 @@
       </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Publikationsort" formControlName="place">
+            <input type="text" matInput placeholder="Publikationsort" formControlName="place">
             @if (addressForm.controls['place'].hasError('required')) {
               <mat-error>Place is <strong>required</strong></mat-error>
             }

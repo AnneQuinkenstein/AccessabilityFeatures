@@ -25,3 +25,10 @@
 .col:last-child {
   margin-right: 0;
 }
+
+mat-card-title {
+  margin: 1.4em;
+  text-align: left;
+  font-weight: 500;
+  font-size: larger
+}

@@ -4,14 +4,16 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
+   <nav>
     <mat-nav-list>
       <a mat-list-item [routerLink]="'form'">Publikation erstellen</a>
-      <a mat-list-item [routerLink]="'pubBl'">Autor:innen in Berlin</a>
-      <a mat-list-item [routerLink]="'pubYear'">Veröffentlichungen pro Jahr</a>
+      <a mat-list-item [routerLink]="'pubBl'">Autor:innen aus Berlin</a>
+      <a mat-list-item [routerLink]="'pubYear'">Publikationen im Jahr</a>
     </mat-nav-list>
+   </nav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="#eee">
       @if (isHandset$ | async) {
         <button
           type="button"
@@ -21,7 +23,10 @@
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
       }
-      <span>Publikationen</span>
+      <span class="titelbar">
+        <img src="assets/images/renate_logo.png" alt="EichhörnchenIcon: Das Logo des Repositorys" class="logo-image"/>
+        Publikationen
+      </span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

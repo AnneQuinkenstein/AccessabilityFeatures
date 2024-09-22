@@ -1,31 +1,31 @@
 <div class="mat-elevation-z8">
 
-
-
-  <table mat-table class="full-width-table" [dataSource]="publicationsInBerlin" aria-label="Elements" >>
-
+  <table mat-table class="full-width-table" [dataSource]="publicationsInBerlin" aria-label="Publikationen von Autor:innen aus Berlin" role="table">>
+    <caption>
+     Publikationen von Autor:innen aus Berlin
+    </caption>
     <!-- SR# Column -->
     <ng-container matColumnDef="SR#">
-      <th mat-header-cell *matHeaderCellDef>SR#</th>
-      <td mat-cell *matCellDef="let publication; let i = index;">{{i +1}}</td>
+      <th mat-header-cell *matHeaderCellDef role="columnheader" >Nummer</th>
+      <td mat-cell *matCellDef="let publication; let i = index;" role="cell" aria-label="fortlaufende Nummer">{{i +1}}</td>
     </ng-container>
 
     <!-- email Column -->
     <ng-container matColumnDef="PPN">
-      <th mat-header-cell *matHeaderCellDef>PPN</th>
-      <td mat-cell *matCellDef="let publication">{{publication.ppnNo}}</td>
+      <th mat-header-cell *matHeaderCellDef  role="columnheader">PPN (eindeutige Nummer des Werkes)</th>
+      <td mat-cell *matCellDef="let publication" role="cell" aria-label="PPN">{{publication.ppnNo}} </td>
     </ng-container>
 
     <!-- role Column -->
     <ng-container matColumnDef="Author">
-      <th mat-header-cell *matHeaderCellDef>Author</th>
-      <td mat-cell *matCellDef="let publication">{{changeAuthorlist(publication.authorList)}}</td>
+      <th mat-header-cell *matHeaderCellDef  role="columnheader">Autor:innen</th>
+      <td mat-cell *matCellDef="let publication " role="cell" aria-label="Autor:innen">{{changeAuthorlist(publication.authorList)}}</td>
     </ng-container>
 
 
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let publication; columns: displayedColumns;"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" role="header-row"></tr>
+    <tr mat-row *matRowDef="let publication; columns: displayedColumns; " role="row"></tr>
   </table>
 
 </div>
