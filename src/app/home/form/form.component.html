@@ -1,17 +1,17 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <mat-card-header>
-      <mat-card-title>Erstelle eine neue Publikation</mat-card-title>
+      <mat-card-title>Erstelle eine neue Publikation. Fülle nachfolgende Felder aus. Alle Felder sind verpflichtend auszufüllen.</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
         <div class="col">
 
           <mat-form-field class="full-width">
-            <mat-label>ppnNo</mat-label>
-            <input type="text" id="ppnNo" matInput placeholder="ppnNo" formControlName="ppnNo">
+            <mat-label>PPN (eindeutige Nummer des Werkes) </mat-label>
+            <input type="text" id="ppnNo" matInput placeholder="PPN (eindeutige Nummer des Werkes)" formControlName="ppnNo" aria-describedby="ppnNo-error" >
             @if (addressForm.controls['ppnNo'].hasError('required')) {
-              <mat-error>ppnNo is <strong>required</strong></mat-error>
+              <mat-error id="ppnNo-error">Angabe der PPN Nummer ist <strong>verpflichtend</strong></mat-error>
             }
           </mat-form-field>
         </div>
@@ -19,9 +19,9 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Titel" formControlName="title">
+              <input type="text" matInput placeholder="Titel" formControlName="title" aria-describedby="title-error">
               @if (addressForm.controls['title'].hasError('required')) {
-                <mat-error>Title is <strong>required</strong></mat-error>
+                <mat-error id="title-error">Angabe des Titels ist <strong>verpflichtend</strong></mat-error>
               }
             </mat-form-field>
           </div>
@@ -29,9 +29,9 @@
         <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="text" matInput placeholder="Autor:innen" formControlName="author">
+            <input type="text" matInput placeholder="Autor:innen" formControlName="author" aria-describedby="author-error">
             @if (addressForm.controls['author'].hasError('required')) {
-              <mat-error>Author is <strong>required</strong></mat-error>
+              <mat-error id="author-error">Angabe der Autor:in ist <strong>verpflichtend</strong></mat-error>
             }
           </mat-form-field>
         </div>
@@ -39,17 +39,17 @@
       <div class="row">
       <div class="col">
         <mat-form-field class="full-width">
-          <input matInput #yearofPublication maxlength="4" placeholder="Publikationsjahr" type="number" formControlName="yearofPublication">
+          <input matInput #yearofPublication maxlength="4" placeholder="Publikationsjahr" type="number" formControlName="yearofPublication" aria-describedby="year-error">
           @if (addressForm.controls['yearofPublication'].hasError('required')) {
-            <mat-error>Year of Publication is <strong>required</strong></mat-error>
+            <mat-error id="year-error">Angabe des Publikationsjahr ist <strong>verpflichtend</strong></mat-error>
           }
         </mat-form-field>
       </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="text" matInput placeholder="Publikationsort" formControlName="place">
+            <input type="text" matInput placeholder="Publikationsort" formControlName="place" aria-describedby="place-error">
             @if (addressForm.controls['place'].hasError('required')) {
-              <mat-error>Place is <strong>required</strong></mat-error>
+              <mat-error id="place-error">Angabe des Ortes ist <strong>verpflichtend</strong></mat-error>
             }
           </mat-form-field>
         </div>

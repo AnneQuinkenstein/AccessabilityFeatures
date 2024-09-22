@@ -1,18 +1,27 @@
 import { Component } from '@angular/core';
-import {CommonModule} from "@angular/common";
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {FormComponent} from "./home/form/form.component";
-import {NavComponent} from "./nav/nav.component";
-import {TablePubPerYearComponent} from "./home/table/table-pub-per-year/table-pub-per-year.component";
-import {TablePublishedInCityComponent} from "./home/table/table-published-in-city/table-published-in-city.component";
+import { FormComponent } from './home/form/form.component';
+import { NavComponent } from './nav/nav.component';
+import { TablePubPerYearComponent } from './home/table/table-pub-per-year/table-pub-per-year.component';
+import { TablePublishedInCityComponent } from './home/table/table-published-in-city/table-published-in-city.component';
+import { NavItemDirective } from './nav-item-directive/nav-item-directive.component';
 
 @Component({
   selector: 'tib-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TablePubPerYearComponent, TablePublishedInCityComponent, FormComponent, NavComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    TablePubPerYearComponent,
+    TablePublishedInCityComponent,
+    FormComponent,
+    NavComponent,
+    NavItemDirective
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'TIBBewerbung';
+  title = 'Uni_Barrierefrei';
 }

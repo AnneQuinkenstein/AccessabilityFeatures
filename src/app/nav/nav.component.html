@@ -4,13 +4,25 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-   <nav>
-    <mat-nav-list>
-      <a mat-list-item [routerLink]="'form'">Publikation erstellen</a>
+
+   <!-- <mat-nav-list>
+      <a mat-list-item aria-current="page" [routerLink]="'form'">Publikation erstellen</a>
       <a mat-list-item [routerLink]="'pubBl'">Autor:innen aus Berlin</a>
       <a mat-list-item [routerLink]="'pubYear'">Publikationen im Jahr</a>
+    </mat-nav-list>-->
+
+    <mat-nav-list>
+      <a mat-list-item aria-current="page" [routerLink]="'form'" (keydown)="onKeydown($event)" #navItem>
+        Publikation erstellen
+      </a>
+      <a mat-list-item [routerLink]="'pubBl'" (keydown)="onKeydown($event)" #navItem>
+        Autor:innen aus Berlin
+      </a>
+      <a mat-list-item [routerLink]="'pubYear'" (keydown)="onKeydown($event)" #navItem>
+        Publikationen im Jahr
+      </a>
     </mat-nav-list>
-   </nav>
+
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="#eee">
@@ -24,7 +36,7 @@
         </button>
       }
       <span class="titelbar">
-        <img src="assets/images/renate_logo.png" alt="EichhörnchenIcon: Das Logo des Repositorys" class="logo-image"/>
+        <img src="assets/images/renate_logo.png" alt="Eichhörnchen-Icon: Das Logo des Repositorys ReNaTe" class="logo-image"/>
         Publikationen
       </span>
     </mat-toolbar>
