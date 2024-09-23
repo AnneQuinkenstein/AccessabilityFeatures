@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import { NavItemDirective } from '../nav-item-directive/nav-item-directive.component';
 import {ListItemFocusable} from "../list-item-focusable.directive";
 import {NavListKeyManager} from "../nav-list-key-manager.directive";
 
@@ -28,7 +27,6 @@ import {NavListKeyManager} from "../nav-list-key-manager.directive";
     AsyncPipe,
     RouterLink,
     RouterOutlet,
-    NavItemDirective,
     RouterLinkActive,
     NavListKeyManager,
     ListItemFocusable,
@@ -66,5 +64,6 @@ export class NavComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
+
 
 }

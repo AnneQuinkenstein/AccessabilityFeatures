@@ -1,5 +1,6 @@
-<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
+<!--<form [formGroup]="addressForm" novalidate (ngSubmit)="submitModalOpen = !submitModalOpen">-->
+<form [formGroup]="addressForm" novalidate>
+<mat-card class="shipping-card">
     <mat-card-header>
       <mat-card-title>Erstelle eine neue Publikation. Fülle nachfolgende Felder aus. Alle Felder sind verpflichtend auszufüllen.</mat-card-title>
     </mat-card-header>
@@ -57,7 +58,13 @@
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Einreichen</button>
+    <!--  <button mat-raised-button color="primary" type="submit">Einreichen</button>-->
+      <button mat-raised-button color="primary" (click)="submitModalOpen = !submitModalOpen" class="submit">
+        Einreichen
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>
+@if (submitModalOpen) {
+  <tib-sumit-modal (modalClose)="submitModalOpen = false"></tib-sumit-modal>
+}

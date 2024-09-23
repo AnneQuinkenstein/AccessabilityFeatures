@@ -1,0 +1,20 @@
+<h2>Bitte vorher anmelden</h2>
+<form>
+  <div>
+    <label>
+      <span>Name</span>
+      <input type="text" />
+    </label>
+    <label>
+      <span>Email Addresse</span>
+      <input type="email" />
+    </label>
+    <label>
+      <span>Passwort</span>
+      <input type="password" />
+    </label>
+  </div>
+  <button (click)="formSubmitted.emit()">
+    weiter
+  </button>
+</form>

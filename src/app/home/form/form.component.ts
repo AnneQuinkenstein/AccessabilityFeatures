@@ -7,6 +7,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ListKeyManager } from '@angular/cdk/a11y';
 import { MatListItem } from '@angular/material/list';
+import {SumitModalComponent} from "../modal/sumit-modal/sumit-modal.component";
 
 
 @Component({
@@ -20,7 +21,8 @@ import { MatListItem } from '@angular/material/list';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SumitModalComponent
   ]
 })
 export class FormComponent {
@@ -36,8 +38,9 @@ export class FormComponent {
   });
 
   hasUnitNumber = false;
+  protected submitModalOpen = false;
 
-  onSubmit(): void {
+  /*onSubmit(): void {
     alert('Thanks!');
-  }
+  }*/
 }
