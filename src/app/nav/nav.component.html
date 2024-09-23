@@ -4,10 +4,23 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-
-
       <mat-nav-list appNavListKeyManager role="navigation">
         @for (item of navItems; track item) {
+          @if (item.fokus) {  <a
+              mat-list-item
+              appListItemFocusable
+              [routerLink]="[item.route]"
+              routerLinkActive
+              [routerLinkActiveOptions]="{ exact: true }"
+              #rla="routerLinkActive"
+              [activated]="rla.isActive"
+              class="mat-focus-indicator"
+              initialFocusLink
+            >
+              <span matListItemTitle>{{ item.title }}</span>
+            </a>
+          }
+          @if (!item.fokus) {
           <a
             mat-list-item
             appListItemFocusable
@@ -16,10 +29,11 @@
             [routerLinkActiveOptions]="{ exact: true }"
             #rla="routerLinkActive"
             [activated]="rla.isActive"
+            class="mat-focus-indicator"
           >
             <span matListItemTitle>{{ item.title }}</span>
-
           </a>
+          }
         }
       </mat-nav-list>
     </mat-sidenav>

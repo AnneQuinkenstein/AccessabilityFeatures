@@ -8,9 +8,9 @@
       <div class="row">
         <div class="col">
 
-          <mat-form-field class="full-width">
+          <mat-form-field class="full-width" >
             <mat-label>PPN (eindeutige Nummer des Werkes) </mat-label>
-            <input type="text" id="ppnNo" matInput placeholder="PPN (eindeutige Nummer des Werkes)" formControlName="ppnNo" aria-describedby="ppnNo-error" >
+            <input type="text" id="ppnNo" matInput placeholder="PPN (eindeutige Nummer des Werkes)" formControlName="ppnNo" aria-describedby="ppnNo-error" class="mat-focus-indicator" >
             @if (addressForm.controls['ppnNo'].hasError('required')) {
               <mat-error id="ppnNo-error">Angabe der PPN Nummer ist <strong>verpflichtend</strong></mat-error>
             }
@@ -20,7 +20,8 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Titel" formControlName="title" aria-describedby="title-error">
+              <mat-label> Titel </mat-label>
+              <input type="text" matInput placeholder="Titel" formControlName="title" aria-describedby="title-error" class="mat-focus-indicator"  >
               @if (addressForm.controls['title'].hasError('required')) {
                 <mat-error id="title-error">Angabe des Titels ist <strong>verpflichtend</strong></mat-error>
               }
@@ -29,8 +30,10 @@
         </div>
         <div class="row">
         <div class="col">
+
           <mat-form-field class="full-width">
-            <input type="text" matInput placeholder="Autor:innen" formControlName="author" aria-describedby="author-error">
+            <mat-label> Autor:innen </mat-label>
+            <input type="text" matInput placeholder="Autor:innen" formControlName="author" aria-describedby="author-error" class="mat-focus-indicator">
             @if (addressForm.controls['author'].hasError('required')) {
               <mat-error id="author-error">Angabe der Autor:in ist <strong>verpflichtend</strong></mat-error>
             }
@@ -39,16 +42,20 @@
           </div>
       <div class="row">
       <div class="col">
+
         <mat-form-field class="full-width">
-          <input matInput #yearofPublication maxlength="4" placeholder="Publikationsjahr" type="number" formControlName="yearofPublication" aria-describedby="year-error">
+          <mat-label> Publikationsjahr </mat-label>
+          <input matInput #yearofPublication maxlength="4" placeholder="Publikationsjahr" type="number" formControlName="yearofPublication" aria-describedby="year-error" class="mat-focus-indicator">
           @if (addressForm.controls['yearofPublication'].hasError('required')) {
             <mat-error id="year-error">Angabe des Publikationsjahr ist <strong>verpflichtend</strong></mat-error>
           }
         </mat-form-field>
       </div>
         <div class="col">
+
           <mat-form-field class="full-width">
-            <input type="text" matInput placeholder="Publikationsort" formControlName="place" aria-describedby="place-error">
+            <mat-label> Publikationsort </mat-label>
+            <input type="text" matInput placeholder="Publikationsort" formControlName="place" aria-describedby="place-error" class="mat-focus-indicator">
             @if (addressForm.controls['place'].hasError('required')) {
               <mat-error id="place-error">Angabe des Ortes ist <strong>verpflichtend</strong></mat-error>
             }
@@ -59,7 +66,7 @@
     </mat-card-content>
     <mat-card-actions>
     <!--  <button mat-raised-button color="primary" type="submit">Einreichen</button>-->
-      <button mat-raised-button color="primary" (click)="submitModalOpen = !submitModalOpen" class="submit">
+      <button mat-raised-button  color="primary" (click)="submitModalOpen = !submitModalOpen" class="submit">
         Einreichen
       </button>
     </mat-card-actions>

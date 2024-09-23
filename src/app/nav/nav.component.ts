@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -11,6 +11,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ListItemFocusable} from "../list-item-focusable.directive";
 import {NavListKeyManager} from "../nav-list-key-manager.directive";
+import { A11yModule } from '@angular/cdk/a11y';
 
 
 @Component({
@@ -30,27 +31,27 @@ import {NavListKeyManager} from "../nav-list-key-manager.directive";
     RouterLinkActive,
     NavListKeyManager,
     ListItemFocusable,
+    A11yModule,
   ]
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, AfterViewInit {
   private breakpointObserver = inject(BreakpointObserver);
+
+  @ViewChild('initialFocusLink') initialFocusLink!: ElementRef;
 
   public navItems = [
     {
-      title: 'Menu',
-      route: '',
-    },
-    {
-      title: 'Publikation erstellen',
-      route: 'form',
-    },
-    {
       title: 'Autor:innen aus Berlin',
       route: 'pubBl',
+      fokus: 'true'
     },
     {
       title: 'Publikationen im Jahr',
-      route: 'pubYear',
+      route: 'pubYear'
+    },
+    {
+      title: 'Publikation erstellen',
+      route: 'form'
     },
   ];
 
@@ -65,5 +66,8 @@ export class NavComponent implements OnInit {
       shareReplay()
     );
 
+  ngAfterViewInit() {
+    this.initialFocusLink.nativeElement.focus();
+  }
 
 }

@@ -1,4 +1,3 @@
-css
 :host {
   display: block;
   text-align: center;
@@ -54,5 +53,5 @@ button:hover {
 }
 
 button:focus {
-  background-color: #ff495d;
+  background-color: deepskyblue;
 }

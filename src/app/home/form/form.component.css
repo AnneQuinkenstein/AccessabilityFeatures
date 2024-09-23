@@ -34,5 +34,22 @@ mat-card-title {
 }
 
 .submit:hover {
-  font-weight: bolder;
+  outline: 5px solid deepskyblue ;
+  outline-offset: 7px;
+}
+
+.submit:focus {
+  outline: 5px solid deepskyblue ;
+  outline-offset: 7px;
+}
+
+.mat-focus-indicator:focus, [cdkFocusInitial]:focus {
+ outline: 5px solid deepskyblue ;
+  outline-offset: 18px;
+ /* box-shadow:20px 19px 0 1px black;*/
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  color: var(--mdc-protected-button-label-text-color, var(--mat-app-primary));
+  background-color: black;
 }

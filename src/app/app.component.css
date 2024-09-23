@@ -1,1 +1,25 @@
+.mat-focus-indicator:focus, [cdkFocusInitial]:focus {
+  outline: 3px solid;
+  outline-offset: 2px;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  transition: border-color 0.3s ease;
+}
 
+
+.mat-focus-indicator:focus {
+  outline: 3px solid;
+  outline-offset: 2px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  transition: border-color 0.3s ease;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  border-color: black;
+}
+
+input.mat-input-element:focus {
+  outline: 2px solid black
+}
