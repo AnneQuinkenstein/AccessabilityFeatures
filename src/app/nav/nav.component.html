@@ -15,7 +15,8 @@
               #rla="routerLinkActive"
               [activated]="rla.isActive"
               class="mat-focus-indicator"
-              initialFocusLink
+              [attr.aria-label]="item.purpose"
+              #navItem
             >
               <span matListItemTitle>{{ item.title }}</span>
             </a>
@@ -42,6 +43,7 @@
     <mat-toolbar color="#eee">
       @if (isHandset$ | async) {
         <button
+          class="menu-button"
           type="button"
           aria-label="Toggle sidenav"
           mat-icon-button
@@ -51,7 +53,7 @@
       }
       <span class="titelbar">
         <img src="assets/images/renate_logo.png" alt="Eichhörnchen-Icon: Das Logo des Repositorys ReNaTe" class="logo-image"/>
-        Publikationen
+        <p> digitales Regal </p>
       </span>
     </mat-toolbar>
     <!-- Add Content Here -->

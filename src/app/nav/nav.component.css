@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: fit-content; ;
 }
 
 .sidenav .mat-toolbar {
@@ -51,5 +51,14 @@ caption {
 }
 
 input.mat-input-element:focus {
-  outline: 2px solid black
+  outline: 2px solid black;
+}
+
+
+.mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--activated .mdc-list-item__primary-text {
+  color: #007F99;
+}
+
+.menu-button:focus {
+  outline: 2px solid #007F99;
 }

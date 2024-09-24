@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ListKeyManager } from '@angular/cdk/a11y';
 import { MatListItem } from '@angular/material/list';
 import {SumitModalComponent} from "../modal/sumit-modal/sumit-modal.component";
+import {AutoFocusDirective} from "../../auto-focus.directive";
 
 
 @Component({
@@ -22,7 +23,8 @@ import {SumitModalComponent} from "../modal/sumit-modal/sumit-modal.component";
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    SumitModalComponent
+    SumitModalComponent,
+    AutoFocusDirective,
   ]
 })
 export class FormComponent {
@@ -40,7 +42,4 @@ export class FormComponent {
   hasUnitNumber = false;
   protected submitModalOpen = false;
 
-  /*onSubmit(): void {
-    alert('Thanks!');
-  }*/
 }

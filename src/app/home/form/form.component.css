@@ -34,22 +34,23 @@ mat-card-title {
 }
 
 .submit:hover {
-  outline: 5px solid deepskyblue ;
+  outline: 5px solid #007F99;
   outline-offset: 7px;
 }
 
 .submit:focus {
-  outline: 5px solid deepskyblue ;
+  outline: 5px solid #007F99;
   outline-offset: 7px;
 }
 
 .mat-focus-indicator:focus, [cdkFocusInitial]:focus {
- outline: 5px solid deepskyblue ;
+ outline: 5px solid #007F99;
   outline-offset: 18px;
  /* box-shadow:20px 19px 0 1px black;*/
 }
 
 .mat-mdc-raised-button:not(:disabled) {
-  color: var(--mdc-protected-button-label-text-color, var(--mat-app-primary));
+  color: var(--mdc-protected-button-label-text-color);
   background-color: black;
 }
+

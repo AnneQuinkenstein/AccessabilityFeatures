@@ -1,6 +1,6 @@
 <div cdkTrapFocus [cdkTrapFocusAutoCapture]="true">
   <tib-sumit-form-modal (formSubmitted)="modalClose.emit()"></tib-sumit-form-modal>
-  <button class="close" (click)="modalClose.emit()">
+  <button class="close" (click)="closeModal()">
     <svg viewBox="0 0 24 24">
       <g clip-rule="evenodd" fill-rule="evenodd">
         <path d="M.39.39a1.335 1.335 0 011.886 0L23.61 21.725a1.333 1.333 0 11-1.886 1.886L.39 2.276a1.333 1.333 0 010-1.885z"></path>
@@ -10,6 +10,6 @@
     <span class="visually-hidden">Close</span>
   </button>
 </div>
-<button class="shield" (click)="modalClose.emit()">
+<button class="shield" (click)="closeModal()">
   <span class="visually-hidden">Close</span>
 </button>

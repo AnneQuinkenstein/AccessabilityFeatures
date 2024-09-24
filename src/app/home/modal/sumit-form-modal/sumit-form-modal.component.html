@@ -1,20 +1,16 @@
-<h2>Bitte vorher anmelden</h2>
+<h2>Melden Sie sich zum Newsletter an</h2>
 <form>
   <div>
-    <label>
+    <label for="name">
       <span>Name</span>
-      <input type="text" />
+      <input id="name" type="text" autocomplete="name" />
     </label>
-    <label>
+    <label for="email">
       <span>Email Addresse</span>
-      <input type="email" />
-    </label>
-    <label>
-      <span>Passwort</span>
-      <input type="password" />
+      <input id="email" type="email" type="email" autocomplete="email"  />
     </label>
   </div>
-  <button (click)="formSubmitted.emit()">
-    weiter
+  <button aria-label="Anmeldung für den Newsletter abschließen" (click)="closeModal()">
+    Anmelden
   </button>
 </form>

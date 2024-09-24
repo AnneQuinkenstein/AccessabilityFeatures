@@ -12,7 +12,7 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ListItemFocusable} from "../list-item-focusable.directive";
 import {NavListKeyManager} from "../nav-list-key-manager.directive";
 import { A11yModule } from '@angular/cdk/a11y';
-
+import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'tib-nav',
@@ -37,27 +37,38 @@ import { A11yModule } from '@angular/cdk/a11y';
 export class NavComponent implements OnInit, AfterViewInit {
   private breakpointObserver = inject(BreakpointObserver);
 
-  @ViewChild('initialFocusLink') initialFocusLink!: ElementRef;
+/*  @ViewChild('initialFocusLink') initialFocusLink!: ElementRef;*/
+  @ViewChild('navItem') navItem!: ElementRef;
+
+  constructor(private renderer: Renderer2) {}
 
   public navItems = [
     {
+      title: 'Info Repositorium',
+      route: '',
+      fokus: 'true',
+      purpose: 'Informationen zu Repositorien allgemein und spezifisch zu dem Repositorium der Technischen Informationsbibliothek'
+    },
+    {
       title: 'Autor:innen aus Berlin',
       route: 'pubBl',
-      fokus: 'true'
+      purpose: 'Auflistung aller Bücher von Autor:innen, die in Berlin publiziert haben im Repository der Technischen Informationsbibliothek'
     },
     {
       title: 'Publikationen im Jahr',
-      route: 'pubYear'
+      route: 'pubYear',
+      purpose: 'Anzahl der Publikationen, die in einem bestimmten Jahr in Repository der Technischen Informationsbibliothek veröffentlicht wurden'
     },
     {
       title: 'Publikation erstellen',
-      route: 'form'
+      route: 'form',
+      purpose: 'Formular um neue Publikationen im Repository der Technischen Informationsbibliothek zu erstellen'
     },
   ];
 
-  constructor() {}
 
   ngOnInit() {}
+
 
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -67,7 +78,8 @@ export class NavComponent implements OnInit, AfterViewInit {
     );
 
   ngAfterViewInit() {
-    this.initialFocusLink.nativeElement.focus();
+    this.renderer.selectRootElement(this.navItem.nativeElement).focus();
+    /*this.initialFocusLink.nativeElement.focus();*/
   }
 
 }
