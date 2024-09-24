@@ -39,8 +39,8 @@
       </mat-nav-list>
     </mat-sidenav>
 
-  <mat-sidenav-content>
-    <mat-toolbar color="#eee">
+  <mat-sidenav-content role="section">
+    <mat-toolbar color="#eee" role = "banner">
       @if (isHandset$ | async) {
         <button
           class="menu-button"
@@ -56,7 +56,6 @@
         <p> digitales Regal </p>
       </span>
     </mat-toolbar>
-    <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

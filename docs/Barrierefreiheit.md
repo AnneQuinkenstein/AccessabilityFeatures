@@ -14,48 +14,65 @@ Verwendung von `<header>`, `<nav>`, `<main>`, `<section>`,`<footer>` um die logi
 - `aria-required="true"` automatisch hinzugefügt, `name`-Attribut wird automatisch hinzugefügt
 - selbst hinzugefügt: 'autocomplete="PPN"' um die Eingabe zu erleichtern
 - type="text", etc. für Eingabefelder
-
 -> Fazit: Aufpassen, dass nicht alles mehrfach ausgezeichnet wird, da Material das bereits macht.
+### einfaches Formular in Modal
+- Label - Input Feld Kombination wird zusammengehalten von dem for-Attribut, das auf die ID des Inputs verweist 
+- Typ-Attribut für Eingabefelder, um die Art der Eingabe zu spezifizieren
+- Autocomplete-Attribut für Eingabefelder, um die Eingabe zu erleichtern
 
 ## Tabellen 
 ### mat-table (Material) 
+- Standardmäßig verwendet MatTable role="table"` für Tabellen, das könnte ich ändern, passt aber hier.
+- role = "header-row", "row", ... für die entsprechenden Elemente hinzugefügt, um die Struktur der Tabelle zu verdeutlichen
+![img_2.png](img_2.png)
+- mit [`<caption>`](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element)   Überschrift zum besseren Verständnis der Tabellen hinzugefügt
+- im `<table>`-Tag `aria-lable="Beschreibung, was die Tabelle zeigt"` hinzugefügt, um die Tabelle zu beschreiben
+
+## Navigation
+-  <mat-sidenav>  habe ich die role = "navigation" um die Funktion zu verdeutlichen
+- <mat-sidenav-content>  habe ich die role = "section", da sie jeweils die Seite zum Link darstellt (ich hatte erst überlegt sie als "main" zu deklarieren, aber mich dann für "section" entschieden, da es sich um eine Teilseite handelt)
+-  <mat-toolbar> bekommt role = "banner" zugewiesen, um die Funktion zu verdeutlichen
+- Links (<a> - Tags) haben ein aria-label in dem der Zweck des Links zu verdeutlicht wird 
+- der Toggle Button hat ein aria-label, um die Funktion zu verdeutlichen
+- das Icon hat ein aria-label, um es und seine Funktion zu beschreiben 
+- aria-expanded="true" oder "false" wird verwendet, um den Zustand des Menüs zu beschreiben
+- aria-disabled="false", um zu verdeutlichen, dass das Menü aktiv ist
+- aria-current="page" wird verwendet, um den aktuellen Link zu markieren
 
 # Das Projekt ist über die Tastatur bedienbar.
-    Die Sprache im Dokument ist angegeben.
-    Ein Fokus-ring ist bei jedem Element sichtbar
-    Ein Skip-link ist Vorhanden, um Bereiche zu überspringen.   
+## Keyboard Navigation um im Menü zu bleiben
+### 1. Versuch ListKeyManager
+- ListKeyManager ist von Angular Material zur Verwaltung der Tastaturnavigation in  Listen für Barrierefreiheit 
+- sieht einfach aus und kann eins auch grob verstehen, aber ich habe es nicht geschafft, es in meinem Projekt zu implementieren
+- ActiveDescendantKeyManager ist eine weitere Option, die ich nicht ausprobiert habe, hat auch nicht geklappt
+
+### 2. Versuch KeyManager ausbuchstabieren und selbst implementieren
+- Liste von Elementen erstellen
+- Direktive erstellen, die auf die Tastatur reagiert
+
+# Die Sprache im Dokument ist angegeben.
+Die Sprache ist auf deutsch eingestellt und wird im Head-Tag angegeben.
+![HTML Code zeigt Language in Head ](image/language2024-07-19.png)    
+vgl. WCAG 2.2: 3.1.1 Language of Page 
+
+# Ein Fokus-ring ist bei jedem Element sichtbar
+
+# Ein Skip-link ist Vorhanden, um Bereiche zu überspringen.   
 
 ## Accessability
 npm install eslint-plugin-jsx-a11y @angular-eslint/eslint-plugin --save-dev
 um die Barrierefreiheit zu verbessern, wurde das Plugin eslint-plugin-jsx-a11y installiert. und eslint angeschaltet
 
-# Sprache 
-von englisch auf deutsch
-![HTML Code zeigt Language in Head ](image/language2024-07-19.png)
-3.1.1 Language of Page
 
 
 
 
-## Navigation
-Die Elemente <mat-sidenav> und <mat-sidenav-content> werden jeweils mit einem passenden role-Attribut versehen. Das <mat-sidenav> eher ein Inhaltsverzeichnis ist, wird es mit role="directory" versehen. Das <mat-sidenav-content> wird mit role="main" versehen, da es den Hauptinhalt der Seite darstellt.
 
 ### Fokus
 Das Sidenav hat die Fähigkeit, den Fokus zu erfassen. Dieses Verhalten ist für die Modi "push" und "over" aktiviert und für den Modus "side" deaktiviert. Sie können das Standardverhalten über das autoFocus-Input ändern.
 Standardmäßig wird das erste fokussierbare Element beim Öffnen den Fokus erhalten. Wenn ein anderes Element fokussiert werden soll, können Sie das cdkFocusInitial-Attribut auf dieses setzen.
 
-## Table 
-![HTML Code zeigt Role in Table-Tag](image/tableRole.png)
-Standardmäßig verwendet MatTable role="table"` für Tabellen, das könnte ich ändern, passt aber hier.
-Material CDK (Component Dev Kit) bietet Unterstützung für Barrierefreiheit bei Tabellen. MatTable basiert auf der CDK-Datentabelle
-Überschrift zu den Tabellen hinzufügen mit [Caption](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced#adding_a_caption_to_your_table_with_caption)
-<thead> element must wrap the part of the table that is the header — this is usually the first row containing the column headings, but this is not necessarily always the case. If you are using <col>/<colgroup> elements, the table header should come just below those.
-The <tbody> element needs to wrap the main part of the table content that isn't the table header or footer
-name + role="columnheader" für die Tabellenüberschriften
-role="row" für die Tabellenzeilen
-role="cell" für die Tabellenzellen
-caption hinzugefügt für die Tabelle
-https://html.spec.whatwg.org/multipage/tables.html#the-caption-element
+
 
 
 # Tastaturbedienung
