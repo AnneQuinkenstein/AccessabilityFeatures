@@ -38,5 +38,16 @@
   <p class="mat-body-1">Die TIB sorgt dafür, dass die Arbeiten im Repositorium auf lange Sicht zugänglich und auffindbar bleiben. Sie garantiert auch, dass die Arbeiten zitiert werden können. Dafür kann es notwendig sein, die Dokumente in andere technische Formate zu übertragen oder sie auf andere Server zu verteilen.</p>
     <p class="mat-body-1">Bei der Verwaltung und Weiterentwicklung des Repositoriums berücksichtigt die TIB Empfehlungen und Standards von nationalen und internationalen Organisationen, wie der Deutschen Initiative für Netzwerkinformation (DINI) und der Open Archives Initiative (OAI).</p>
   </section>
+<section class="mat-display-2" tabindex="0">
+  <h2>Anmeldung beim Newsletter der Technischen Informationsbibliothek</h2>
+  <p class="mat-body-1">  Erfahren Sie alle Neuigkeiten über Projekte, Forschung, Veranstaltungen und Entwicklungen an unserer Hochschule. Melden Sie sich jetzt an und bekommen Sie regelmäßig Infos direkt in Ihr E-Mail-Postfach.</p>
+  <button mat-raised-button  color="primary" (click)="submitModalOpen = !submitModalOpen" class="submit">
+    Anmeldung zum Newsletter
+  </button>
+</section>
+
+@if (submitModalOpen) {
+  <tib-sumit-modal (modalClose)="submitModalOpen = false"></tib-sumit-modal>
+}
 
 

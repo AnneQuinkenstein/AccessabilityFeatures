@@ -18,7 +18,7 @@ export class SumitModalComponent {
   closeModal() {
     this.modalClose.emit();
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/form']);
+      this.router.navigate(['/']);
     });
   }
 }

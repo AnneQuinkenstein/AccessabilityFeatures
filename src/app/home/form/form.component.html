@@ -1,5 +1,5 @@
-<!--<form [formGroup]="addressForm" novalidate (ngSubmit)="submitModalOpen = !submitModalOpen">-->
-<form  [formGroup]="addressForm" novalidate>
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+<!--<form  [formGroup]="addressForm" novalidate>-->
 <mat-card class="shipping-card">
     <mat-card-header>
       <mat-card-title>Erstellen Sie eine neue Publikation im Repositorium für Naturwissenschaften und Technik. Füllen Sie nachfolgende Felder aus. Alle Felder sind verpflichtend auszufüllen.</mat-card-title>
@@ -65,13 +65,13 @@
 
     </mat-card-content>
     <mat-card-actions>
-    <!--  <button mat-raised-button color="primary" type="submit">Einreichen</button>-->
-      <button aria-label="Einreichung der Publikation abschließen" mat-raised-button  color="primary" (click)="submitModalOpen = !submitModalOpen" class="submit">
+      <button mat-raised-button color="primary" type="submit" class="submit">Publikation einreichen</button>
+  <!--    <button aria-label="Einreichung der Publikation abschließen" mat-raised-button  color="primary" (click)="submitModalOpen = !submitModalOpen" class="submit">
         Einreichen
-      </button>
+      </button>-->
     </mat-card-actions>
   </mat-card>
 </form>
-@if (submitModalOpen) {
+<!--@if (submitModalOpen) {
   <tib-sumit-modal (modalClose)="submitModalOpen = false"></tib-sumit-modal>
-}
+}-->

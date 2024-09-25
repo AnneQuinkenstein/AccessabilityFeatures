@@ -85,7 +85,7 @@ Es soll möglich sein, ohne aus dem Menü zu fallen, mit den Pfeiltasten zu navi
 ## Aria-Attribute verwenden
 siehe oben bei Navigation
 
-## Focus-Trap für modale Dialoge
+## Focus-Trap für modale Dialog (Newsletter)
 Focus-Trap wird verwendet, um den Fokus innerhalb eines Dialogs zu halten, bis er geschlossen wird.
 Hier habe ich das cdkTrapFocus aus dem A11yModule aus Angular CDK ausprobiert. Ich hab nicht `mat-form` verwendet, sondern den Rest möglichst einfach gehalten, damit die Bibliotheken sich nicht gegenseitig in die Quere kommen. 
 - `cdkTrapFocus`:  Diese Direktive fängt den Fokus innerhalb des spezifizierten Elements ein, sodass Benutzer:innen den Fokus nicht aus dem Modal heraus tabben können.
@@ -101,7 +101,7 @@ Die Sprache ist auf deutsch eingestellt und wird im Head-Tag angegeben.
 ![HTML Code zeigt Language in Head ](image/language2024-07-19.png)    
 vgl. WCAG 2.2: 3.1.1 Language of Page 
 
-# Ein Fokus-ring ist bei jedem Element sichtbar
+# Ein Fokusring ist bei jedem Element sichtbar
 vgl. WCAG 2.2: 2.4.7 Focus Visible
 Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.
 ## Fokusstate (Outline)

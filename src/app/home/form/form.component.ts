@@ -9,6 +9,7 @@ import { ListKeyManager } from '@angular/cdk/a11y';
 import { MatListItem } from '@angular/material/list';
 import {SumitModalComponent} from "../modal/sumit-modal/sumit-modal.component";
 import {AutoFocusDirective} from "../../auto-focus.directive";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -29,6 +30,7 @@ import {AutoFocusDirective} from "../../auto-focus.directive";
 })
 export class FormComponent {
   private fb = inject(FormBuilder);
+  constructor(private router: Router) { }
   addressForm = this.fb.group({
     ppnNo:  [null, Validators.required],
     title:  [null, Validators.required],
@@ -40,6 +42,10 @@ export class FormComponent {
   });
 
   hasUnitNumber = false;
-  protected submitModalOpen = false;
-
+ /* protected submitModalOpen = false;*/
+  onSubmit(): void {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/form']);
+    });
+  }
 }
