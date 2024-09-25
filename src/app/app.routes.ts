@@ -9,5 +9,5 @@ export const routes: Routes = [
   {path: 'pubYear', title: "jährliche Publikationen", component: TablePubPerYearComponent},
   {path: 'pubBl', title: "Berliner Publikationen", component: TablePublishedInCityComponent},
   {path: 'form', title: "Erstelle neue Publikation", component: FormComponent},
-  {path: '', title: "Regal", component: HomeComponent},
+  {path: '', title: "Repositorium", component: HomeComponent},
 ];
