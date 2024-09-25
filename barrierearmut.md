@@ -1,4 +1,7 @@
 
+# Barrierearmut
+In diesem Projekt habe ich verschiedene Aspekte der Barrierefreiheit (Accessibility) im Web angewendet und erprobt.
+
 # Semantisches  Markup.
 
 ## HTML
@@ -23,7 +26,7 @@ bei `<main>` habe ich mich entschieden, dass die Informationen der Main Inhalt s
 ### mat-table (Material) 
 - Standardmäßig verwendet MatTable `role="table"` für Tabellen, das könnte ich ändern, passt aber hier.
 - `role` = "header-row", "row", ... für die entsprechenden Elemente hinzugefügt, um die Struktur der Tabelle zu verdeutlichen
-![img_2.png](image/img_2.png)
+![img_2.png](src/assets/images/img_2.png)
 - mit [`<caption>`](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element)   Überschrift zum besseren Verständnis der Tabellen hinzugefügt
 - im `<table>`-Tag `aria-lable="Beschreibung, was die Tabelle zeigt"` hinzugefügt, um die Tabelle zu beschreiben
 
@@ -38,8 +41,7 @@ bei `<main>` habe ich mich entschieden, dass die Informationen der Main Inhalt s
 -` aria-disabled="false"`, um zu verdeutlichen, dass das Menü aktiv ist
 - `aria-current="page"` wird verwendet, um eine Reihe verwandter Elemente, die den aktuellen Abschnitt einer Website darstellen, zu kennzeichnen.
 - form: `aria-labelledby="formTitle" `beim error ->  `id="formTitle" `wird automatisch durch material hinzugefügt
--
-aria-hidden="true" - zb beim skiplink - noch erklären
+- `aria-hidden="true"` Das Element und seine Kinder sind für assistive Technologien unsichtbar. (zB das Linkicon beim Skiplink)  ` <span class="link__icon" aria-hidden="true">`
 
 
 # Das Projekt ist über die Tastatur bedienbar.
@@ -76,11 +78,11 @@ Es soll möglich sein, ohne aus dem Menü zu fallen, mit den Pfeiltasten zu navi
   - ##### `Renderer2` 
     - um den Fokus zu steuern
     - direkte DOM-Manipulation hat nicht funktioniert, deswegen Renderer2 benutzt
-    - ![img_3.png](image/img_3.png)
+    - ![img_3.png](src/assets/images/img_3.png)
   
 ## tabindex
 - tabindex="0" wird verwendet, um ein Element in die Tab-Reihenfolge aufzunehmen
-- ![img_4.png](image/img_4.png)
+- ![img_4.png](src/assets/images/img_4.png)
 - 
 ## Aria-Attribute verwenden
 siehe oben bei Navigation
@@ -98,7 +100,7 @@ geprüft:
 
 # Die Sprache im Dokument ist angegeben.
 Die Sprache ist auf deutsch eingestellt und wird im Head-Tag angegeben.
-![HTML Code zeigt Language in Head ](image/language2024-07-19.png)    
+![HTML Code zeigt Language in Head ](src/assets/images/language2024-07-19.png)    
 vgl. WCAG 2.2: 3.1.1 Language of Page 
 
 # Ein Fokusring ist bei jedem Element sichtbar
@@ -106,7 +108,7 @@ vgl. WCAG 2.2: 2.4.7 Focus Visible
 Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.
 ## Fokusstate (Outline)
  - hauptsächlich habe ich jeweils passende outline für den Fokusstate hinzugefügt 
- - ![img_5.png](image/img_5.png)
+ - ![img_5.png](src/assets/images/img_5.png)
  - dafür habe ich den Elementen eine Klasse hinzugefügt, die den Fokusstate definiert oder ich habe die Materialklassen gesucht und dort einen Fokusstate hinzugefügt
  - Formfeldern habe ich eine Linie hinzugefügt, die den Fokusstate anzeigt - da diese eh schon ziemlich voll sind 
  - nicht vergessen habe ich bei kleinen Bildschirmen erscheinende Toggle Menü
@@ -149,7 +151,7 @@ Schriftfarbe bei aktiven Links geändert in `#007F99` auf `#FFFFFF` Kontrastverh
 ## 1.4.4 Resize Text
 Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.
 - ich habe auf Best Practices bei der Auswahl von Schriftarten für eine zugängliche Webseite geachtet und bei https://www.leserlich.info/kapitel/zeichen/schriftart.php#schriftliste, Calibri Regular gefunden und eingebaut. 
-![img.png](image/img.png)
+![img.png](src/assets/images/img.png)
 
 ## 2.4.6 Headings and Labels
 Headings and labels describe topic or purpose.
@@ -161,7 +163,7 @@ Headings and labels describe topic or purpose.
 The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general.
 bei alle Links im aria-label habe ich den Zweck expliziert
 zB: 
-![img_1.png](image/img_1.png)
+![img_1.png](src/assets/images/img_1.png)
 
 ## 3.3.1 Error Identification
 If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.
