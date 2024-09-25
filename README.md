@@ -1,6 +1,6 @@
 # Accessability Features
 
-Webprojekts zur Anwendung und Erprobung verschiedener Aspekte der Barrierefreiheit (Accessibility) im Web im Rahmen von B41.2 Besondere Kapitel der Informatik: Webtechnologien II - Barrierefreie Webentwicklung (HTW Berlin, Phillip Wahle) 
+Webprojekts zur Anwendung und Erprobung verschiedener Aspekte der Barrierefreiheit (Accessibility) im Web im Rahmen von B41.2 Besondere Kapitel der Informatik: Webtechnologien II - Barrierefreie Webentwicklung (HTW Berlin, Philipp Wahle) 
 
 Hier finden Sie eine kurze Anleitung zur Installation und Ausführung des Projekts.
 In diesem Projekt habe ich verschiedene Aspekte der Barrierefreiheit angewendet, Beschreibungen siehe [Barrierearmut](./barrierearmut.md).
