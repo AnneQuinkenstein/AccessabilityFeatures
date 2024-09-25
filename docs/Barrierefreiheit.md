@@ -23,7 +23,7 @@ bei `<main>` habe ich mich entschieden, dass die Informationen der Main Inhalt s
 ### mat-table (Material) 
 - Standardmäßig verwendet MatTable `role="table"` für Tabellen, das könnte ich ändern, passt aber hier.
 - `role` = "header-row", "row", ... für die entsprechenden Elemente hinzugefügt, um die Struktur der Tabelle zu verdeutlichen
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 - mit [`<caption>`](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element)   Überschrift zum besseren Verständnis der Tabellen hinzugefügt
 - im `<table>`-Tag `aria-lable="Beschreibung, was die Tabelle zeigt"` hinzugefügt, um die Tabelle zu beschreiben
 
@@ -76,11 +76,11 @@ Es soll möglich sein, ohne aus dem Menü zu fallen, mit den Pfeiltasten zu navi
   - ##### `Renderer2` 
     - um den Fokus zu steuern
     - direkte DOM-Manipulation hat nicht funktioniert, deswegen Renderer2 benutzt
-    - ![img_3.png](img_3.png)
+    - ![img_3.png](image/img_3.png)
   
 ## tabindex
 - tabindex="0" wird verwendet, um ein Element in die Tab-Reihenfolge aufzunehmen
-- ![img_4.png](img_4.png)
+- ![img_4.png](image/img_4.png)
 - 
 ## Aria-Attribute verwenden
 siehe oben bei Navigation
@@ -93,8 +93,8 @@ Hier habe ich das cdkTrapFocus aus dem A11yModule aus Angular CDK ausprobiert. I
 
 ## weiteres bzgl. WCAG 2.2
 geprüft: 
-2.1.2 No Keyboard Trap
-2.1.3 All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.
+* 2.1.2 No Keyboard Trap
+* 2.1.3 All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.
 
 # Die Sprache im Dokument ist angegeben.
 Die Sprache ist auf deutsch eingestellt und wird im Head-Tag angegeben.
@@ -106,7 +106,7 @@ vgl. WCAG 2.2: 2.4.7 Focus Visible
 Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.
 ## Fokusstate (Outline)
  - hauptsächlich habe ich jeweils passende outline für den Fokusstate hinzugefügt 
- - ![img_5.png](img_5.png)
+ - ![img_5.png](image/img_5.png)
  - dafür habe ich den Elementen eine Klasse hinzugefügt, die den Fokusstate definiert oder ich habe die Materialklassen gesucht und dort einen Fokusstate hinzugefügt
  - Formfeldern habe ich eine Linie hinzugefügt, die den Fokusstate anzeigt - da diese eh schon ziemlich voll sind 
  - nicht vergessen habe ich bei kleinen Bildschirmen erscheinende Toggle Menü
@@ -122,53 +122,50 @@ A mechanism is available to bypass blocks of content that are repeated on multip
 1. Skip-Link hinzugefügt, um die wichtigsten Informationen für Einsteiger*innen zu erreichen
 2. Skip-Link um direkt zur Hauptaufgabe, neue Publikationen hinzuzufügen, zu springen
 
-direktive autofocus benutzt <!-- Use the fragment directive to point to the ID of the element to scroll to -->
-in der app-componente, damit von überall zu benutzen ist 
-da wo ich hinnavigiere: appAutoFocus type="text" id="ppnNo"  
+- den Skip-Link habe ich in der app.componente hinzugefügt, damit er von überall erreichbar ist
+- ich habe eine direktive für den autofokus erstellt, die ich benuteze, um die ID des Elements zu scrollen, auf den ich den Fokus setzen möchte
+- `<a href="/form/#ppnNo" ... >` -> springt zu `< ... appAutoFocus id="ppnNo" ...>`
 
 
-
-
-
-
-
-Schriftart: https://www.leserlich.info/kapitel/zeichen/schriftart.php#schriftliste, Calibri Regular
-![img.png](img.png)
-
-Kontrast:
-https://www.leserlich.info/werkzeuge/kontrastrechner/index.php
-Der Farbcode `#009FB7` (RGB 0, 159, 183) auf Weiß (`#FFFFFF`) hat ein Kontrastverhältnis von etwa 2.71:1, was bedeutet, dass er nicht den Mindestanforderungen für Barrierefreiheit entspricht. schriftfarbe bei Fokus geändert  in #007F99 Kontrastverhältnis: 4.07:1
-
-
-
-
+# 6 Erfolgskriterien aus den Web Content Accessibility Guidelines (WCAG) 2.2.
 
 ## 1.1 Text Alternatives (alt-Text bei Bildern und Icons)
+`<img src="assets/images/renate_logo.png" alt="Eichhörnchen-Icon: Das Logo des Repositorys ReNaTe" class="logo-image"/>`
+`<img src="../../../assets/images/tib1.jpg" aria-label="Banner" alt="Eingang des modernen Gebäudes der Technischen Informationsbibliothek Hannover" ....>`
 
 ## 1.3.4 Orientation
-relativen Maßen, Flexbox Design
+Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.
+- ich habe darauf geachtet, dass die Seite sowohl im Hoch- als auch im Querformat gut lesbar ist mit
+  - relativen Maßen
+  - Flexbox Design
+  - Toggle Menü, das sich bei kleinen Bildschirmen öffnet
 
-## 2.4.4 Link Purpose (In Context)
-The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general.
+## 1.4.3 Contrast (Minimum)
+The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.
+Bei der Farbwahl habe ich darauf geachtet, dass die Farben einen Kontrast von mindestens 4.5:1 haben.
+Schriftfarbe bei aktiven Links geändert in `#007F99` auf `#FFFFFF` Kontrastverhältnis: 4.7:1
+(vorher `#009FB7` auf `#FFFFFF` -> Kontrastverhältnis von etwa 2.71:1
+
+## 1.4.4 Resize Text
+Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.
+- ich habe auf Best Practices bei der Auswahl von Schriftarten für eine zugängliche Webseite geachtet und bei https://www.leserlich.info/kapitel/zeichen/schriftart.php#schriftliste, Calibri Regular gefunden und eingebaut. 
+![img.png](image/img.png)
 
 ## 2.4.6 Headings and Labels
 Headings and labels describe topic or purpose.
+- Aussagekräftige Überschriften
+- Sinnvolle und beschreibende Labels für Formulare
+- Hierarchische Überschriftenstruktur
 
-## 2.4.9 Link Purpose (Link Only)
-A mechanism is available to allow the purpose of each link to be identified from link text alone, except where the purpose of the link would be ambiguous to users in general.
-![img_1.png](img_1.png)
+## 2.4.4 Link Purpose (In Context)
+The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general.
+bei alle Links im aria-label habe ich den Zweck expliziert
+zB: 
+![img_1.png](image/img_1.png)
 
 ## 3.3.1 Error Identification
 If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.
+- Fehlermeldungen werden angezeigt, wenn ein Formular nicht korrekt ausgefüllt wurde
+- Fehlermeldungen sind für Screenreader-Benutzer:innen zugänglich (mir aria-labelledby, id und aria-live="polite") (siehe oben )
 
-erwendete Quellen:
-https://blog.angular.dev/improving-angular-components-accessibility-89b8ae904952
-https://v5.material.angular.io
-https://www.leserlich.info
-
-
-
-## IDE
-npm install eslint-plugin-jsx-a11y @angular-eslint/eslint-plugin --save-dev
-um die Barrierefreiheit zu verbessern, wurde das Plugin eslint-plugin-jsx-a11y installiert. und eslint angeschaltet
 
